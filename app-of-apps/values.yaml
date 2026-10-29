@@ -18,3 +18,11 @@ environments:
         namespace: nginx
         valueFiles: 
           - /dev/apps-kustomization/nginx/values.yaml
+          
+      - name: nginx2
+        releaseName: nginx2
+        project: dev
+        path: helm-chart/nginx2
+        namespace: nginx2
+        valueFiles: 
+          - /dev/apps-kustomization/nginx2/values.yaml
