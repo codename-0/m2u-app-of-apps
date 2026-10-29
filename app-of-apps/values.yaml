@@ -1,0 +1,20 @@
+defaultDestination:
+  server: https://kubernetes.default.svc
+  namespace: default
+
+defaultSource:
+  repoURL: https://github.com/codename-0/m2u-app-of-apps.git
+  targetRevision: main
+
+environments:
+  - name: dev
+    destination: 
+      server: https://kubernetes.default.svc
+    applications:
+      - name: nginx
+        releaseName: nginx
+        project: dev
+        path: /helm-chart/nginx
+        namespace: nginx
+        valueFiles: 
+          - /dev/apps-kustomization/nginx/values.yaml
