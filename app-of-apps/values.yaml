@@ -14,7 +14,7 @@ environments:
       - name: nginx
         releaseName: nginx
         project: dev
-        path: /helm-chart/nginx
+        path: helm-chart/nginx
         namespace: nginx
         valueFiles: 
           - /dev/apps-kustomization/nginx/values.yaml
