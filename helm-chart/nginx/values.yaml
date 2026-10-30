@@ -5,9 +5,9 @@ image:
   tag: alpine
   pullPolicy: IfNotPresent
 
-service:
-  type: ClusterIP
-  port: 80
+# service:
+#   type: ClusterIP
+#   port: 80
 
 resources:
   requests:
