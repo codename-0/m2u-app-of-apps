@@ -15,8 +15,8 @@ environments:
         namespace: metallb-system
         repoURL: https://metallb.github.io/metallb
         targetRevision: 0.16.1
-        valueFiles:
-          - /dev/infra-kustomization/metallb/values.yaml
+        extraPaths:
+          - dev/infra-kustomization/metallb/pools
 
       - name: ingress-nginx
         namespace: ingress-nginx

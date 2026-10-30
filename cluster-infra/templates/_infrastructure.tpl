@@ -1,4 +1,5 @@
 {{- define "infraApplication" -}}
+{{- $top := .top -}}
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
@@ -9,7 +10,8 @@ metadata:
 spec:
   project: default
   sources:
-    - repoURL: {{ .infra.repoURL }}
+    - chart: {{ .infra.name }}
+      repoURL: {{ .infra.repoURL }}
       targetRevision: {{ .infra.targetRevision }}
       helm:
         releaseName: {{ .infra.name }}
@@ -18,12 +20,20 @@ spec:
           - $values{{ . }}
           {{- end }}
     
-    - repoURL: {{ .top.Values.defaultSource.repoURL }}
-      targetRevision: {{ .top.Values.defaultSource.targetRevision }}
+    - repoURL: {{ $top.Values.defaultSource.repoURL }}
+      targetRevision: {{ $top.Values.defaultSource.targetRevision }}
       ref: values
 
+    {{- if .infra.extraPaths }}
+    {{- range .infra.extraPaths }}
+    - repoURL: {{ $top.Values.defaultSource.repoURL }}
+      targetRevision: {{ $top.Values.defaultSource.targetRevision }}
+      path: {{ . }}
+    {{- end }}
+    {{- end }}
+
   destination:
-    server: {{ (.env.destination).server | default .top.Values.defaultDestination.server }}
+    server: {{ (.env.destination).server | default $top.Values.defaultDestination.server }}
     namespace: {{ .infra.namespace }}
     
   syncPolicy:
