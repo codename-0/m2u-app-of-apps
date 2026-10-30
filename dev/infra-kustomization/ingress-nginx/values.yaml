@@ -2,5 +2,5 @@ controller:
   service:
     type: LoadBalancer
     
-  admissionWebhooks:
-    enabled: false
+  # admissionWebhooks:
+  #   enabled: false
