@@ -10,6 +10,6 @@ resources:
   limits:
     memory: 64Mi
 
-service:
-  type: LoadBalancer
-  port: 80
+# service:
+#   type: LoadBalancer
+#   port: 80
