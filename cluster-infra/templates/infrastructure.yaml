@@ -1,0 +1,8 @@
+{{- $top := . -}}
+{{- range .Values.environments }}
+{{- $env := . }}
+{{- range .infrastructure }}
+{{ include "infraApplication" (dict "infra" . "env" $env "top" $top) }}
+---
+{{- end }}
+{{- end }}

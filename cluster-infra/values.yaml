@@ -1,0 +1,26 @@
+defaultDestination:
+  server: https://kubernetes.default.svc
+  namespace: default
+
+defaultSource:
+  repoURL: https://github.com/codename-0/m2u-app-of-apps.git
+  targetRevision: main
+
+environments:
+  - name: dev
+    destination:
+      server: https://kubernetes.default.svc
+    infrastructure:
+      - name: metallb
+        namespace: metallb-system
+        repoURL: https://metallb.github.io/metallb
+        targetRevision: 0.16.1
+        valueFiles:
+          - /dev/infra-kustomization/metallb/values.yaml
+
+      - name: ingress-nginx
+        namespace: ingress-nginx
+        repoURL: https://kubernetes.github.io/ingress-nginx
+        targetRevision: 4.15.1
+        valueFiles:
+          - /dev/infra-kustomization/ingress-nginx/values.yaml

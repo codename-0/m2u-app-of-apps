@@ -1,0 +1,4 @@
+apiVersion: v2
+name: cluster-infra
+description: CLuster infra root chart
+version: 0.0.1
