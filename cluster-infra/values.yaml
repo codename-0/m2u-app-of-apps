@@ -34,10 +34,13 @@ environments:
         #   - /dev/infra-kustomization/gha-runner-scale-set-controller/values.yaml
 
       - infra:
-        name: gha-runner-scale-set
+        name: runners-stargazer-fe
+        chart: gha-runner-scale-set
         repoURL: ghcr.io/actions/actions-runner-controller-charts
         targetRevision: 0.15.1
         namespace: arc-runners
         createNamespace: false
         valueFiles:
           - /dev/infra-kustomization/gha-runner-scale-set/values.yaml
+        values:
+          githubConfigUrl: https://github.com/codename-0/st-stargazer-world-fe
