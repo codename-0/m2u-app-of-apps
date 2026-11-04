@@ -3,7 +3,7 @@ githubConfigSecret: "controller-manager-github-secret"
 
 controllerServiceAccount:
   namespace: "arc-systems"
-  name: "gha-runner-scale-set-controller"
+  name: gha-runner-scale-set-controller-gha-rs-controller
 
 template:
   spec:
