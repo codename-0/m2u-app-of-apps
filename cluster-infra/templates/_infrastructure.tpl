@@ -19,6 +19,10 @@ spec:
           {{- range .infra.valueFiles }}
           - $values{{ . }}
           {{- end }}
+        {{- if .infra.values }}
+        valuesObject:
+          {{- toYaml .infra.values | nindent 10 }}
+        {{- end }}
     
     - repoURL: {{ $top.Values.defaultSource.repoURL }}
       targetRevision: {{ $top.Values.defaultSource.targetRevision }}
