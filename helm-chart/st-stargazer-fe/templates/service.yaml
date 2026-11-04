@@ -9,5 +9,5 @@ spec:
     app: {{ .Release.Name }}
   ports:
     - port: {{ .Values.service.port | default 80 }}
-      targetPort: 80
+      targetPort: 3000
 {{- end -}}
