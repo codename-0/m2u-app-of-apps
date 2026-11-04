@@ -59,9 +59,3 @@ template:
             mountPath: /var/run
           - name: work
             mountPath: /home/runner/_work
-
-    volumes:
-      - name: dind-sock
-        emptyDir: {}
-      - name: work
-        emptyDir: {}
