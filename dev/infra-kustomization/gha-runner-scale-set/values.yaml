@@ -20,6 +20,15 @@ template:
     containers:
       - name: runner
         image: ghcr.io/actions/actions-runner:2.338.2
+        command: ["/bin/sh", "-c"]
+        args:
+          - |
+            echo "Waiting for Docker daemon socket..."
+            while [ ! -S /var/run/docker.sock ]; do
+              sleep 1
+            done
+            echo "Docker socket is ready!"
+            exec /home/runner/run.sh
         resources:
           requests:
             cpu: "100m"
