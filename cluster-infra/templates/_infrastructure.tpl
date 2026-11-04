@@ -10,11 +10,11 @@ metadata:
 spec:
   project: default
   sources:
-    - chart: {{ .infra.name }}
+    - chart: {{ .infra.chart | default .infra.name }}
       repoURL: {{ .infra.repoURL }}
       targetRevision: {{ .infra.targetRevision }}
       helm:
-        releaseName: {{ .infra.name }}
+        releaseName: {{ .infra.releaseName | default .infra.name }}
         valueFiles:
           {{- range .infra.valueFiles }}
           - $values{{ . }}
