@@ -5,6 +5,8 @@ kind: Application
 metadata:
   name: {{ .infra.name }}-{{ .env.name }}
   namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
   labels:
     app.kubernetes.io/part-of: cluster-infra
 spec:
