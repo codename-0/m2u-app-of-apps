@@ -1,4 +1,6 @@
 githubConfigSecret: "controller-manager-github-secret"
+containerMode:
+  type: "dind"
 
 controllerServiceAccount:
   namespace: "arc-systems"
