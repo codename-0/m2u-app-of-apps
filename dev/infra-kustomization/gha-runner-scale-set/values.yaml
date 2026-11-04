@@ -19,6 +19,7 @@ template:
 
     containers:
       - name: runner
+        image: ghcr.io/actions/actions-runner:2.338.2
         resources:
           requests:
             cpu: "250m"
