@@ -1,4 +1,4 @@
-githubConfigUrl: "https://github.com/codename-0/st-stargazer-world-fe.git"
+githubConfigUrl: "https://github.com/codename-0/st-stargazer-world-fe"
 githubConfigSecret: "controller-manager-github-secret"
 
 controllerServiceAccount:
