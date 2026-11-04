@@ -24,3 +24,20 @@ environments:
         targetRevision: 4.15.1
         valueFiles:
           - /dev/infra-kustomization/ingress-nginx/values.yaml
+
+      - infra:
+        name: gha-runner-scale-set-controller
+        repoURL: https://github.com/actions/actions-runner-controller.git
+        targetRevision: 0.15.1
+        namespace: arc-systems
+        # valueFiles:
+        #   - /dev/infra-kustomization/gha-runner-scale-set-controller/values.yaml
+
+      - infra:
+        name: gha-runner-scale-set
+        repoURL: https://github.com/actions/actions-runner-controller.git
+        targetRevision: 0.15.1
+        namespace: arc-runners
+        createNamespace: false
+        valueFiles:
+          - /dev/infra-kustomization/gha-runner-scale-set/values.yaml

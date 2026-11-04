@@ -1,0 +1,23 @@
+githubConfigUrl: "https://github.com/codename-0"
+githubConfigSecret: "controller-manager-github-secret"
+
+template:
+  spec:
+    nodeSelector:
+      kubernetes.io/hostname: w0x01
+    
+    tolerations:
+      - key: "dedicated"
+        operator: "Equal"
+        value: "arc-runners"
+        effect: "NoSchedule"
+
+    containers:
+      - name: runner
+        resources:
+          requests:
+            cpu: "250m"
+            memory: "512Mi"
+          limits:
+            cpu: "2000m"
+            memory: "4Gi"

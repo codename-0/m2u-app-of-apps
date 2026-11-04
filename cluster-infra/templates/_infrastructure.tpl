@@ -41,7 +41,10 @@ spec:
       selfHeal: true
       prune: true
     syncOptions:
+      {{- $createNs := ternary (.infra.createNamespace) true (hasKey .infra "createNamespace") }}
+      {{- if $createNs }}
       - CreateNamespace=true
+      {{- end }}
       - PrunePropagationPolicy=foreground
       - ServerSideApply=true
 {{- end -}}
