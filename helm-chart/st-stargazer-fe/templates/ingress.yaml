@@ -22,5 +22,4 @@ spec:
                 name: {{ .Release.Name }}
                 port:
                   name: http
-                  number: {{ .Values.service.port | default 80 }}
 {{- end -}}
