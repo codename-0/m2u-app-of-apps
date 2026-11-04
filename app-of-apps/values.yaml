@@ -18,3 +18,12 @@ environments:
         namespace: nginx
         valueFiles: 
           - /dev/apps-kustomization/nginx/values.yaml
+
+      - name: st-stargazer-fe
+        releaseName: st-stargazer-fe
+        project: dev
+        path: helm-chart/st-stargazer-fe
+        namespace: st-stargazer-fe
+        valueFiles: 
+          - /dev/apps-kustomization/st-stargazer-fe/values.yaml
+
