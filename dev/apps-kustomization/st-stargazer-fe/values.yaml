@@ -12,7 +12,7 @@ service:
 ingress:
   enabled: true
   ingressClassName: nginx
-  host: nginx.st-stargazer.com
+  host: st-stargazer.com
   path: /
   pathType: Prefix
 
