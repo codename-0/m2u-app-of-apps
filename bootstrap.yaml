@@ -15,6 +15,22 @@ spec:
       kind: '*'
 ---
 apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: prod
+  namespace: argocd
+spec:
+  description: Prod apps
+  sourceRepos:
+    - https://github.com/codename-0/m2u-app-of-apps.git
+  destinations:
+    - namespace: '*'
+      server: https://10.11.0.5:6443
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+---
+apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: m2u-root
