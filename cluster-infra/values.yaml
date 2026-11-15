@@ -54,4 +54,4 @@ environments:
         repoURL: https://kubernetes.github.io/ingress-nginx
         targetRevision: 4.15.1
         valueFiles:
-          - /prod/infra-kustomization/ingress-nginx/values.yam
+          - /prod/infra-kustomization/ingress-nginx/values.yaml
