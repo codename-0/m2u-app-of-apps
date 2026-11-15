@@ -1,0 +1,6 @@
+controller:
+  service:
+    type: LoadBalancer
+    
+  # admissionWebhooks:
+  #   enabled: false

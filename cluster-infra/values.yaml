@@ -44,3 +44,14 @@ environments:
           - /dev/infra-kustomization/gha-runner-scale-set/values.yaml
         values:
           githubConfigUrl: https://github.com/codename-0/st-stargazer-world-fe
+
+  - name: prod
+    destination:
+      server: https://10.11.0.5:6443
+    infrastructure:
+      - name: ingress-nginx
+        namespace: ingress-nginx
+        repoURL: https://kubernetes.github.io/ingress-nginx
+        targetRevision: 4.15.1
+        valueFiles:
+          - /prod/infra-kustomization/ingress-nginx/values.yam
