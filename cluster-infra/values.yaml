@@ -45,7 +45,7 @@ environments:
         values:
           githubConfigUrl: https://github.com/codename-0/st-stargazer-world-fe
 
-  - name: prod
+  - name: staging
     destination:
       server: https://10.11.0.5:6443
     infrastructure:
@@ -56,7 +56,7 @@ environments:
         valueFiles:
           - /prod/infra-kustomization/ingress-nginx/values.yaml
 
-  - name: prod-v2
+  - name: prod
     destination:
       server: https://10.11.4.12:6443
     infrastructure:
