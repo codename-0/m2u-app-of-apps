@@ -55,3 +55,14 @@ environments:
         targetRevision: 4.15.1
         valueFiles:
           - /prod/infra-kustomization/ingress-nginx/values.yaml
+
+  - name: prod-v2
+    destination:
+      server: https://10.11.4.12:6443
+    infrastructure:
+      - name: ingress-nginx
+        namespace: ingress-nginx
+        repoURL: https://kubernetes.github.io/ingress-nginx
+        targetRevision: 4.15.1
+        valueFiles:
+          - /prod/infra-kustomization/ingress-nginx/values.yaml
