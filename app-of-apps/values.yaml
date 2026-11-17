@@ -27,7 +27,7 @@ environments:
         valueFiles: 
           - /dev/apps-kustomization/st-stargazer-fe/values.yaml
   
-  - name: prod
+  - name: staging
     destination: 
       server: https://10.11.0.5:6443
     applications:
@@ -39,7 +39,7 @@ environments:
         valueFiles: 
           - /prod/apps-kustomization/st-stargazer-fe/values.yaml
 
-  - name: prod-v2
+  - name: prod
     destination: 
       server: https://10.11.4.12:6443
     applications:
