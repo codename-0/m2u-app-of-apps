@@ -39,3 +39,15 @@ environments:
         valueFiles: 
           - /prod/apps-kustomization/st-stargazer-fe/values.yaml
 
+  - name: prod-v2
+    destination: 
+      server: https://10.11.4.12:6443
+    applications:
+      - name: st-stargazer-fe
+        releaseName: st-stargazer-fe
+        project: prod
+        path: helm-chart/st-stargazer-fe
+        namespace: st-stargazer-fe
+        valueFiles: 
+          - /prod/apps-kustomization/st-stargazer-fe/values.yaml
+
