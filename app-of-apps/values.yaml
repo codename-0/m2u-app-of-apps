@@ -11,14 +11,6 @@ environments:
     destination: 
       server: https://kubernetes.default.svc
     applications:
-      - name: nginx
-        releaseName: nginx
-        project: dev
-        path: helm-chart/nginx
-        namespace: nginx
-        valueFiles: 
-          - /dev/apps-kustomization/nginx/values.yaml
-
       - name: st-stargazer-fe
         releaseName: st-stargazer-fe
         project: dev
