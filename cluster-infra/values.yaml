@@ -45,17 +45,6 @@ environments:
         values:
           githubConfigUrl: https://github.com/codename-0/st-stargazer-world-fe
 
-  - name: staging
-    destination:
-      server: https://10.11.0.5:6443
-    infrastructure:
-      - name: ingress-nginx
-        namespace: ingress-nginx
-        repoURL: https://kubernetes.github.io/ingress-nginx
-        targetRevision: 4.15.1
-        valueFiles:
-          - /prod/infra-kustomization/ingress-nginx/values.yaml
-
   - name: prod
     destination:
       server: https://10.11.4.12:6443
